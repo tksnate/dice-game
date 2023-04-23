@@ -13,7 +13,7 @@ const player1 = document.querySelector('.player--1');
 
 dice.classList.add('hidden');
 
-const scores = [0, 0];
+let scores = [0, 0];
 score0.textContent = scores[0];
 score1.textContent = scores[1];
 let currentScore = 0;
@@ -64,4 +64,20 @@ btnHold.addEventListener('click', function () {
       switchPlayer();
     }
   }
+});
+
+btnNew.addEventListener('click', function () {
+  playing = true;
+  dice.classList.add('hidden');
+  current0.textContent = 0;
+  current1.textContent = 0;
+  player0.classList.add('player--active');
+  player1.classList.remove('player--active');
+  score0.textContent = 0;
+  score1.textContent = 0;
+  currentScore = 0;
+  activePlayer = 0;
+  player0.classList.remove('player--winner');
+  player1.classList.remove('player--winner');
+  scores = [0, 0];
 });
